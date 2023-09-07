@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<link rel="stylesheet" href="jemdoc.css" type="text/css" />
+<title></title>
+</head>
+<body>
+<table summary="Table for page layout." id="tlayout">
+<tr valign="top">
+    <font size="+1">
+    <b> <font color="SlateBlue"> Research Highlights </font> </b>
+    <ol>
+        <a style="text-decoration: none" target="_blank"><b> <font color='blue'>Learning and Communications Co-Design for Remote Inference</font></b><p> <font color='blue'><b>Abstract:</font></b> In this paper, we consider a remote inference system, where a neural network is used to infer a time-varying target (e.g., robot movement), based on features (e.g., video clips) that are progressively received from a sensing node (e.g., a camera). Each feature is a temporal sequence of sensory data. The learning performance of the system is determined by (i) the timeliness and (ii) the temporal sequence length of the features, where we use Age of Information (AoI) as a metric for timeliness. While a longer feature can typically provide better learning performance, it often requires more channel resources for sending the feature. To minimize the time-averaged inference error, we study a learning and communication co-design problem that jointly optimizes feature length selection and transmission scheduling. When there is a single sensor-predictor pair and a single channel, we develop low-complexity optimal co-designs for both the cases of time-invariant and time-variant feature length. When there are multiple sensor-predictor pairs and multiple channels, the co-design problem becomes a restless multi-arm multi-action bandit problem that is PSPACE-hard. For this setting, we design a low-complexity algorithm to solve the problem. Trace-driven evaluations suggest that the proposed co-designs can significantly reduce the time-averaged inference error of remote inference systems.</p></a><b><font color='blue'>See details in<a href="https://arxiv.org/abs/2308.10094"style="text-decoration: none" target="_blank"> [Paper] </font></b></a>
+        
+      <figure><img width="400" id="_x0000_i1025" src="RFigure1.png" alt="test" title=" ">
+          <img width="400" id="_x0000_i1025" src="RFigure3.png" alt="test" title=" ">
+          <img width="400" id="_x0000_i1025" src="RFigure2.png" alt="test" title=" ">
+              
+      </figure>
+      </ol>
+      
+      <ol>
+          <a style="text-decoration: none" target="_blank"><b> <font color='blue'>Timely Communication for Remote Inference</font></b><p> <font color='blue'><b>Abstract:</font></b> In this paper, we analyze the impact of data freshness on real-time supervised learning, where a neural network is trained to infer a time-varying target (e.g., the position of the vehicle in front) based on features (e.g., video frames) observed at a sensing node (e.g., camera or lidar). One might expect that the performance of real-time supervised learning degrades monotonically as the feature becomes stale. Using an information-theoretic analysis, we show that this is true if the feature and target data sequence can be closely approximated as a Markov chain; it is not true if the data sequence is far from Markovian. Hence, the prediction error of real-time supervised learning is a function of the Age of Information (AoI), where the function could be non-monotonic. Several experiments are conducted to illustrate the monotonic and non-monotonic behaviors of the prediction error. To minimize the inference error in real-time, we propose a new "selection-from-buffer" model for sending the features, which is more general than the "generate-at-will" model used in earlier studies. By using Gittins and Whittle indices, low-complexity scheduling strategies are developed to minimize the inference error, where a new connection between the Gittins index theory and Age of Information (AoI) minimization is discovered. These scheduling results hold (i) for minimizing general AoI functions (monotonic or non-monotonic) and (ii) for general feature transmission time distributions. Data-driven evaluations are presented to illustrate the benefits of the proposed scheduling algorithms.</p></a><b><font color='blue'>See details in<a href="https://dl.acm.org/doi/abs/10.1145/3492866.3549711"style="text-decoration: none" target="_blank"> [Paper] </font></b></a>
+          <figure><img width="400" id="_x0000_i1025" src="RFigure6.png" alt="test" title=" ">
+                 <img width="400" id="_x0000_i1025" src="RFigure7.png" alt="test" title=" ">
+                  <img width="400" id="_x0000_i1025" src="RFigure8.png" alt="test" title=" ">
+                  
+          </figure>
+   
+     </font>
+    </ol>
+
