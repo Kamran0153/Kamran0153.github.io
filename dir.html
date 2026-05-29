@@ -42,49 +42,44 @@
         /* Column 2 styling (Navigation Menu) */
         .nav-links {
             display: flex;
-            gap: 12px; /* Spacing between the navigation boxes */
+            gap: 20px; /* Spacing between plain text links */
             list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        /* Default State: Black border boxes */
+        /* Default State: Clean, black plain text links (No boxes or borders) */
         .nav-links a {
             color: #000000;
             text-decoration: none;
             font-weight: bold;
-            font-size: 14px;
-            padding: 8px 14px;
-            border: 1px solid #000000;
-            border-radius: 4px;
-            transition: all 0.2s ease;
+            font-size: 16px;
+            padding: 5px 0;
+            transition: color 0.2s ease;
         }
 
         /* Hover State */
         .nav-links a:hover {
-            background-color: #F5F5F5;
+            color: #555555; /* Subtle dark gray on hover */
         }
 
-        /* Active Page State: Box turns completely red */
+        /* Active Page State: Just the text turns red when navigating */
         .nav-links a.active {
             color: red;
-            border-color: red;
+            background: none;
         }
     </style>
 </head>
 <body>
 
     <header class="header-container">
-        <!-- First Column: Personal Academic Brand -->
         <div class="profile-column">
             <h1>Md Kamran Chowdhury Shisher</h1>
             <p>Incoming Assistant Professor of Electrical and Computer Engineering<br>
             University of Colorado Colorado Springs</p>
         </div>
         
-        <!-- Second Column: Navigation Links -->
-        <ul class="nav-links">
-            <!-- Add class="active" to the link of whichever page this file belongs to -->
+        <ul class="nav-links" id="menu">
             <li><a href="./main.html" class="active">Home</a></li>
             <li><a href="./publications.html">Publications</a></li>
             <li><a href="./teaching.html">Teaching</a></li>
@@ -93,6 +88,20 @@
             <li><a href="./KamranCV.pdf">CV</a></li>
         </ul>
     </header>
+
+    <script>
+        const links = document.querySelectorAll('#menu a');
+        
+        links.forEach(link => {
+            link.addEventListener('click', function() {
+                // Remove the red 'active' class from all links
+                links.forEach(item => item.classList.remove('active'));
+                
+                // Add the red 'active' class to the clicked link
+                this.classList.add('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
