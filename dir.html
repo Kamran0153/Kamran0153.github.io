@@ -8,41 +8,91 @@
         body {
             background-color: #FFFFFF;
             font-family: sans-serif;
-            font-size: 16px;
-            margin: 20px;
+            margin: 0;
+            padding: 15px 20px;
+        }
+        
+        /* The main two-column container */
+        .header-container {
+            display: flex;
+            justify-content: space-between; /* Column 1 on left, Column 2 on right */
+            align-items: center;            /* Vertically centers both columns */
+            border-bottom: 2px solid #EEEEEE; /* Clean dividing line beneath the header */
+            padding-bottom: 15px;
+        }
+
+        /* Column 1 styling */
+        .profile-column {
+            max-width: 50%;
+        }
+
+        .profile-column h1 {
+            color: #000000;
+            font-size: 22px;
+            margin: 0 0 5px 0;
+        }
+
+        .profile-column p {
+            color: #555555;
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* Column 2 styling (Navigation Menu) */
+        .nav-links {
+            display: flex;
+            gap: 12px; /* Spacing between the navigation boxes */
+            list-style: none;
+            margin: 0;
             padding: 0;
         }
-        h2 {
-            color: #000000;
-            font-size: 20px;
-            margin-bottom: 30px;
-        }
-        .nav-link {
-            display: block;
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .nav-link a {
+
+        /* Default State: Black border boxes */
+        .nav-links a {
             color: #000000;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: bold;
+            font-size: 14px;
+            padding: 8px 14px;
+            border: 1px solid #000000;
+            border-radius: 4px;
+            transition: all 0.2s ease;
         }
-        .nav-link a:hover {
-            text-decoration: underline;
-            color: red; /* Optional: Highlights red when hovered to match your main page theme */
+
+        /* Hover State */
+        .nav-links a:hover {
+            background-color: #F5F5F5;
+        }
+
+        /* Active Page State: Box turns completely red */
+        .nav-links a.active {
+            color: red;
+            border-color: red;
         }
     </style>
 </head>
 <body>
 
-    <h2>Academic Homepage</h2>
-
-    <div class="nav-link"><a href="./main.html">Home</a></div>
-    <div class="nav-link"><a href="./publications.html">Publications</a></div>
-    <div class="nav-link"><a href="./teaching.html">Teaching</a></div>
-    <div class="nav-link"><a href="./talk.html">Talks</a></div>
-    <div class="nav-link"><a href="./services.html">Services</a></div>
-    <div class="nav-link"><a href="./KamranCV.pdf">CV</a></div>
+    <header class="header-container">
+        <!-- First Column: Personal Academic Brand -->
+        <div class="profile-column">
+            <h1>Md Kamran Chowdhury Shisher</h1>
+            <p>Incoming Assistant Professor of Electrical and Computer Engineering<br>
+            University of Colorado Colorado Springs</p>
+        </div>
+        
+        <!-- Second Column: Navigation Links -->
+        <ul class="nav-links">
+            <!-- Add class="active" to the link of whichever page this file belongs to -->
+            <li><a href="./main.html" class="active">Home</a></li>
+            <li><a href="./publications.html">Publications</a></li>
+            <li><a href="./teaching.html">Teaching</a></li>
+            <li><a href="./talk.html">Talks</a></li>
+            <li><a href="./services.html">Services</a></li>
+            <li><a href="./KamranCV.pdf">CV</a></li>
+        </ul>
+    </header>
 
 </body>
 </html>
