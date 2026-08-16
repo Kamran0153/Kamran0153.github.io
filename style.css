@@ -76,10 +76,14 @@ body {
 }
 
 /* --- Profile Social Icons --- */
+/* max-width matches .profile-pic so the row centres on the photo's
+   axis rather than the wider sidebar's. */
 .profile-social {
     display: flex;
+    justify-content: center;
     gap: 12px;
     margin-top: 10px;
+    max-width: 240px;
 }
 
 .profile-social a {
@@ -354,7 +358,9 @@ h3.subsection-heading {
     .nav-menu li {
         margin-bottom: 0;
     }
+    /* The 240px cap exists to align with the photo in the desktop
+       sidebar; here it would shift the row off-centre. */
     .profile-social {
-        justify-content: center;
+        max-width: none;
     }
 }
