@@ -1,19 +1,17 @@
 /* ==========================================================================
    Shared stylesheet for Kamran0153.github.io
-   Previously duplicated inline in every page; consolidated here so a change
-   lands once instead of five times.
+   Layout: horizontal top navbar, centred identity column, blue accent.
    ========================================================================== */
 
-/* Sans drives the interface (sidebar, nav, headings); serif carries the
-   reading text in the content column. */
 :root {
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+    --accent: #2962ff;          /* links, active nav */
+    --accent-deep: #1565c0;     /* social icons */
+    --text: #212529;
+    --muted: #6c757d;
+    --border: #e9ecef;
 }
 
-/* --- Core Resets --- */
-/* Without this, max-width sizes the content box and padding is added on
-   top, so .wrapper rendered 40px wider than its declared max-width. */
 *,
 *::before,
 *::after {
@@ -22,206 +20,237 @@
 
 body {
     font-family: var(--font-sans);
-    line-height: 1.6;
-    color: #222;
+    font-size: 17px;
+    line-height: 1.65;
+    color: var(--text);
     margin: 0;
     padding: 0;
     background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* --- Reading text -------------------------------------------------------
-   The column was 800px wide, which ran the bio to ~105 characters per
-   line, well past the 45-75 range where the eye reliably finds the next
-   line. Measured in em rather than ch: Georgia's "0" is a narrow
-   old-style figure, so 68ch rendered ~88 characters, not 68.
-   ------------------------------------------------------------------------ */
-.content-stream p,
-.content-stream li {
-    font-family: var(--font-serif);
-    font-size: 17px;
-    line-height: 1.68;
-}
-
-/* --- Two-Column Primary Page Structure --- */
-.wrapper {
-    display: flex;
-    /* 260 sidebar + 40 gap + 560 column + 2x20 padding. Sized to fit its
-       children exactly so no slack collects on one side. */
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    gap: 40px;
-}
-
-/* --- SIDEBAR (Left Column) --- */
-.sidebar {
-    width: 260px;
-    flex-shrink: 0;
+/* --- Top navigation bar --- */
+.site-nav {
     position: sticky;
-    top: 40px;
-    height: fit-content;
+    top: 0;
+    z-index: 20;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid var(--border);
 }
 
-/* <picture> is inline by default, which would leave a descender gap under
-   the photo and change how the sidebar centres on mobile. */
+.nav-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    min-height: 64px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 30px;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+}
+
+.brand:hover {
+    color: var(--accent);
+}
+
+.site-nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 22px;
+}
+
+.site-nav nav a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #495057;
+    text-decoration: none;
+    padding: 4px 0;
+    transition: color 0.15s ease;
+}
+
+.site-nav nav a:hover {
+    color: var(--accent);
+}
+
+.site-nav nav a.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* --- Page shell --- */
+.wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 44px 20px 64px;
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Interior pages carry no identity column; centre their single column. */
+.wrapper-single .content-stream {
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+/* --- Identity column --- */
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    text-align: center;
+    position: sticky;
+    top: 100px;
+}
+
 .sidebar picture {
     display: block;
 }
 
 .profile-pic {
     width: 100%;
+    max-width: 270px;
+    /* The img carries width/height attributes, which map to presentational
+       height. aspect-ratio only applies when height is auto, so without
+       this the circle renders as an ellipse. */
     height: auto;
-    max-width: 240px;
-    border-radius: 6px;
-    margin-bottom: 15px;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    /* Source photo is 2:3 portrait; bias the square crop upward so the
+       circle frames the face rather than the centre of the torso. */
+    object-position: 50% 16%;
+    border-radius: 50%;
+    margin: 0 auto 22px;
 }
 
 .profile-name {
-    font-size: 22px;
-    font-weight: 700;
-    margin: 10px 0 5px 0;
+    font-size: 32px;
+    font-weight: 400;
     line-height: 1.2;
-    color: #000;
+    color: var(--text);
+    margin: 0 0 8px;
+    letter-spacing: -0.02em;
 }
 
 .profile-title {
-    font-size: 14px;
-    color: #555;
-    margin: 0 0 15px 0;
-    line-height: 1.4;
+    font-size: 17px;
+    color: var(--muted);
+    margin: 0 0 4px;
+}
+
+.profile-affiliation {
+    font-size: 16px;
+    color: var(--accent);
+    margin: 0;
 }
 
 .profile-email {
-    display: block;
-    font-size: 12px;
-    color: #777;
-    margin-top: 5px;
+    display: inline-block;
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 10px;
     text-decoration: none;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .profile-email:hover {
-    color: red;
-    text-decoration: underline;
+    color: var(--accent);
 }
 
-/* --- Profile Social Icons --- */
-/* max-width matches .profile-pic so the row centres on the photo's
-   axis rather than the wider sidebar's. */
+/* --- Social icons --- */
 .profile-social {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin-top: 10px;
-    max-width: 240px;
+    gap: 16px;
+    margin-top: 16px;
 }
 
 .profile-social a {
     display: inline-flex;
-    transition: opacity 0.2s ease;
+    color: var(--accent-deep);
+    transition: opacity 0.15s ease;
 }
 
-/* Brand colours; the SVGs paint with currentColor. */
-.profile-social .icon-linkedin { color: #0A66C2; }
-.profile-social .icon-scholar  { color: #4285F4; }
-.profile-social .icon-email    { color: #D93025; }
-
-/* Icons are already coloured, so hover dims rather than recolours. */
 .profile-social a:hover {
-    opacity: 0.7;
+    opacity: 0.65;
 }
 
 .profile-social svg {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     display: block;
     fill: currentColor;
 }
 
-/* --- Minimal Stacked Sidebar Links --- */
-.nav-menu {
-    list-style: none;
-    padding: 0;
-    margin: 25px 0 0 0;
-    border-top: 1px solid #eee;
-    padding-top: 20px;
-}
-
-.nav-menu li {
-    margin-bottom: 10px;
-}
-
-.nav-menu a {
-    color: #333;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 600;
-    display: inline-block;
-    transition: color 0.2s ease;
-}
-
-.nav-menu a:hover {
-    color: red;
-    text-decoration: underline;
-}
-
-.nav-menu a.active {
-    color: red;
-}
-
-/* --- CONTENT STREAM (Right Column) --- */
-/* 560px keeps the reading line near 70 characters. The heading rules and
-   the prose share this one width, so nothing overhangs. */
+/* --- Content column --- */
 .content-stream {
-    flex-grow: 1;
-    max-width: 560px;
-    /* Flex items default to min-width:auto and will not shrink below their
-       min-content width. Guards against a long unbreakable string (a bare
-       URL in a publication entry, say) widening the column on small
-       screens. */
+    flex: 1;
     min-width: 0;
 }
 
+.content-stream p,
+.content-stream li {
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+.content-stream a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.content-stream a:hover {
+    text-decoration: underline;
+}
+
 h2.section-heading {
-    font-family: var(--font-sans);
-    font-size: 25px;
+    font-size: 24px;
     font-weight: 700;
     letter-spacing: -0.01em;
-    margin: 0 0 25px 0;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #ddd;
-    color: #111;
+    color: var(--text);
+    margin: 0 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
 }
 
 h2.section-heading.alert {
-    color: red;
-    border-bottom: 1px solid red;
+    color: var(--accent);
+    border-bottom-color: var(--accent);
 }
 
 h3.subsection-heading {
-    font-family: var(--font-sans);
     font-size: 18px;
-    font-weight: 700;
-    margin: 30px 0 15px 0;
-    color: #222;
+    font-weight: 600;
+    color: var(--text);
+    margin: 30px 0 14px;
 }
 
 .section-block {
-    margin-bottom: 45px;
+    margin-bottom: 46px;
 }
 
-/* --- Notification Banner (home) --- */
+/* --- Callout --- */
 .alert-box {
-    background-color: #fff9f9;
-    border-left: 4px solid red;
-    padding: 15px;
-    margin: 15px 0;
+    background-color: #f5f8ff;
+    border-left: 4px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    padding: 16px 18px;
+    margin: 16px 0;
     font-size: 16px;
 }
 
 .alert-box a {
-    color: red;
-    font-weight: bold;
+    color: var(--accent);
+    font-weight: 600;
     text-decoration: none;
 }
 
@@ -229,7 +258,7 @@ h3.subsection-heading {
     text-decoration: underline;
 }
 
-/* --- Recent News list (home) --- */
+/* --- Recent News --- */
 .item-list {
     list-style-type: none;
     padding-left: 0;
@@ -237,36 +266,30 @@ h3.subsection-heading {
 }
 
 .item-list li {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 2px solid var(--border);
 }
 
 /* --- Publications --- */
 .pub-list {
     list-style-type: decimal;
-    padding-left: 20px;
+    padding-left: 22px;
     margin: 0;
 }
 
 .pub-list li {
     margin-bottom: 18px;
-    color: #333;
 }
 
 .pub-list li a {
-    color: #0056b3;
-    text-decoration: none;
     font-weight: 600;
 }
 
-.pub-list li a:hover {
-    text-decoration: underline;
-    color: red;
-}
-
 .acceptance-tag {
-    color: #c7254e;
-    background-color: #f9f2f4;
-    padding: 2px 4px;
+    color: #b3266b;
+    background-color: #fdf2f7;
+    padding: 2px 6px;
     font-size: 13px;
     border-radius: 4px;
     font-weight: 600;
@@ -275,19 +298,18 @@ h3.subsection-heading {
 /* --- Talks --- */
 .talks-list {
     list-style-type: decimal;
-    padding-left: 20px;
+    padding-left: 22px;
     margin: 0;
 }
 
 .talks-list > li {
     margin-bottom: 24px;
-    color: #111;
 }
 
 .talk-title {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 17px;
-    color: #000;
+    color: var(--text);
 }
 
 .venue-list {
@@ -298,32 +320,24 @@ h3.subsection-heading {
 
 .venue-list li {
     font-size: 15px;
-    color: #444;
+    color: var(--muted);
     margin-bottom: 4px;
 }
 
 .asset-link {
-    color: #0056b3;
-    text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-}
-
-.asset-link:hover {
-    text-decoration: underline;
-    color: red;
 }
 
 /* --- Teaching --- */
 .teaching-list {
     list-style-type: square;
-    padding-left: 20px;
+    padding-left: 22px;
     margin: 0;
 }
 
 .teaching-list li {
     margin-bottom: 12px;
-    color: #333;
 }
 
 .sub-list {
@@ -334,63 +348,42 @@ h3.subsection-heading {
 
 .sub-list li {
     font-size: 15px;
-    color: #555;
+    color: var(--muted);
     margin-bottom: 4px;
 }
 
 /* --- Services --- */
 .service-list {
     list-style-type: square;
-    padding-left: 20px;
+    padding-left: 22px;
     margin: 0;
 }
 
 .service-list li {
     margin-bottom: 8px;
-    color: #333;
 }
 
 .service-list a {
-    color: #0056b3;
-    text-decoration: none;
     font-weight: 600;
 }
 
-.service-list a:hover {
-    text-decoration: underline;
-    color: red;
-}
-
-/* --- Handheld Responsiveness Breakpoint --- */
-@media (max-width: 820px) {
+/* --- Narrow screens --- */
+@media (max-width: 880px) {
+    .nav-inner {
+        padding: 10px 20px;
+        gap: 6px 18px;
+    }
     .wrapper {
         flex-direction: column;
-        padding: 20px;
+        gap: 34px;
+        padding: 30px 20px 50px;
     }
     .sidebar {
         width: 100%;
         position: relative;
         top: 0;
-        text-align: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
     }
-    .nav-menu {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-        width: 100%;
-        padding-bottom: 15px;
-        border-bottom: 1px solid #eee;
-    }
-    .nav-menu li {
-        margin-bottom: 0;
-    }
-    /* The 240px cap exists to align with the photo in the desktop
-       sidebar; here it would shift the row off-centre. */
-    .profile-social {
-        max-width: none;
+    .profile-pic {
+        max-width: 200px;
     }
 }
