@@ -84,12 +84,17 @@ body {
 
 .profile-social a {
     display: inline-flex;
-    color: #777;
-    transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
+/* Brand colours; the SVGs paint with currentColor. */
+.profile-social .icon-linkedin { color: #0A66C2; }
+.profile-social .icon-scholar  { color: #4285F4; }
+.profile-social .icon-email    { color: #D93025; }
+
+/* Icons are already coloured, so hover dims rather than recolours. */
 .profile-social a:hover {
-    color: red;
+    opacity: 0.7;
 }
 
 .profile-social svg {
