@@ -1,0 +1,815 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue, citecolor=blue]{hyperref}
+%\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+% xcolor (above) already loads color with dvipsnames; reloading it here
+% caused "Option clash for package color" and blocked compilation.
+%\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+%\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{ragged2e}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{lastpage}
+\usepackage[left=0.6in, right=0.6in,bottom=0.8in,top=0.8in]{geometry}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+%\addtolength{\oddsidemargin}{-0.6in}
+%\addtolength{\evensidemargin}{-0.5in}
+%\addtolength{\textwidth}{1.19in}
+%\addtolength{\topmargin}{-.7in}
+%\addtolength{\textheight}{1.4in}
+
+%\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+\fancyfoot[R]{Page \thepage\ of \pageref{LastPage}}
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    {\Huge \scshape Md Kamran Chowdhury Shisher} \\ \vspace{5pt}
+    {\small \bf Department of Electrical and Computer Engineering} \\ \vspace{1pt}{\bf \small University of Colorado Colorado Springs, Colorado Springs, CO} \\ \vspace{1pt}
+    \small
+     Email: \href{mailto:mshisher@uccs.edu}{mshisher@uccs.edu}, \href{mailto:kamranshisher@gmail.com}{kamranshisher@gmail.com} ~
+    Web: \url{https://kamran0153.github.io}~\\
+    Google Scholar: \url{https://scholar.google.com/citations?user=LKaamzMAAAAJ&hl=en} \\ \vspace{1pt}
+    \href{https://www.linkedin.com/in/kamranshisher/}{\raisebox{-0.2\height}\faLinkedin\ \underline{www.linkedin.com/in/kamranshisher}}
+    
+    %\href{https://github.com/Kamran0153}
+    %{\raisebox{-0.2\height}GitHub: \ \underline{https://github.com/Kamran0153}}\
+    \vspace{15pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
+
+\section*{Education}
+
+\textbf{Ph.D. in Electrical Engineering} \hfill Aug. 2018 -- May 2024 \\
+Auburn University, Auburn, AL  \\
+{Advisor: Prof. Yin Sun} \\
+{\bf Thesis Title: Timely Inference over Networks}
+\medskip
+
+\textbf{M.S. in Electrical Engineering} \hfill Aug. 2022 \\
+{Auburn University, Auburn, AL}
+\medskip
+
+\textbf{B.Sc. in Electrical and Electronic Engineering} \hfill Feb. 2013 -- Sep. 2017 \\
+{Bangladesh University of Engineering and Technology}
+
+
+%------RELEVANT COURSEWORK-------
+\section{Research Interests}
+    %\resumeSubHeadingListStart
+        Communication Networks, Wireless Communications, Goal-oriented and Semantic Communication, Networked Control Systems, Machine Learning, Stochastic Optimization and Control
+        
+\vspace{0pt}
+\section*{Professional Experience}
+\textbf{Assistant Professor} \hfill Aug. 2026 -- Present \\
+Department of Electrical and Computer Engineering \\
+University of Colorado Colorado Springs\\
+\medskip
+
+\textbf{Postdoctoral Researcher} \hfill May 2024 -- Aug. 2026 \\
+Department of Electrical and Computer Engineering, Purdue University  \\
+Advisors: Prof. Christopher G. Brinton and Prof. Mung Chiang 
+\medskip
+
+\textbf{Research Assistant} \hfill Aug. 2018 -- May 2024 \\
+Department of Electrical and Computer Engineering, Auburn University  \\ Advisor: Prof. Yin Sun
+\medskip
+
+\textbf{Teaching Assistant} \hfill Jan. 2020 -- May 2024 \\ Auburn University 
+\medskip
+
+\textbf{Lecturer} \hfill Nov. 2017 -- June 2018 \\
+Department of Electrical and Electronic Engineering\\ Bangladesh Army University of Science and Technology 
+
+% \section{Professional Appointments}
+% \begin{itemize}[leftmargin=0em, label={}, topsep=2pt, itemsep=0.1em]
+
+%     \item \textbf{Postdoctoral Researcher} \hfill May 2024 -- Present \\
+%     Department of Electrical and Computer Engineering\\
+%     {Purdue University} \\
+%     Supervisors: Prof. Christopher G. Brinton and Prof. Mung Chiang 
+%     % \begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+%     %     \item Research on AI and Networks 
+%     %     \item Mentoring PhD Students 
+%     %     \item Contributed to Proposal Writing and Report Submission 
+%     % \end{itemize}
+
+%     \item \textbf{Research Assistant} \hfill Aug. 2018 -- April 2024 \\
+%      Department of Electrical and Computer Engineering\\
+%     {Auburn University}\\
+%     Supervisor: Prof. Yin Sun 
+%     % \begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+%     %     \item Research on Networking for Remote Inference 
+%     %     \item Mentored Undergraduate and Junior PhD Students
+%     % \end{itemize}
+    
+%     \item \textbf{Teaching Assistant} \hfill Jan. 2020 -- May 2024 \\ % Date from Teaching section
+%     {Auburn University} 
+    
+%     \item \textbf{Lecturer} \hfill Nov. 2017 -- June 2018 \\
+%     {Bangladesh Army University of Science and Technology} \\
+%     Department of Electrical and Electronics Engineering
+
+% \end{itemize}
+
+% \textopenbullet~~{\bf Purdue University} \hfill{May 2024-present}\\
+% \textbf{PostDoctoral Researcher}, ION Lab and EDGE Lab \\
+% Supervisor: {\bf Prof. Christopher G. Brinton} and {\bf Prof. Mung Chiang}\\
+% \quad \quad \textbullet~Research on AI and Networks\\
+% \quad \quad \textbullet~Mentoring PhD Students\\
+% \quad \quad \textbullet~Contributed to Proposal Writing and Report Submission\\
+
+% \textopenbullet~~{\bf Auburn University} \hfill{August 2018-April 2024}\\
+% \textbf{Research Assistant},  Real-time Networking Lab \\
+% Supervisor: {\bf Prof. Yin Sun} \\
+% \quad \quad \textbullet~Research on Networking for Remote Inference\\
+% \quad \quad \textbullet~Mentored Undergrad and Junior PhD Students\\
+% \textbf{Teaching Assistant}\\
+
+% \textopenbullet~~{\bf Bangladesh Army University of Science Technology} \hfill{Nov. 2017-June 2018}\\
+% \textbf{Lecturer}, Electrical and Electronics Engineering \\
+
+
+
+\section*{Awards and Honors (selected)}
+{\bf Auburn University Graduate School Distinguished Dissertation Award} \hfill 2026 \\
+ECE Nominee for Purdue CoE Outstanding Postdoc Award \hfill 2026 \\
+\href{https://www.comsoc.org/about/awards/paper-awards/ieee-communications-society-william-r-bennett-prize}{\bf The IEEE ComSoc William R. Bennett Prize} \hfill 2025 \\
+Research Profile featured in ACM SIGMETRICS Performance Evaluation Review \hfill 2023 \\
+NSF Student Travel Grant, ACM MobiHoc \hfill 2023 \\
+NSF Travel Grant, North American School of Information Theory \hfill 2023 \\
+ACM SIGMOBILE Student Travel Grant, ACM MobiHoc \hfill 2022 \\
+IEEE INFOCOM Student Conference Grant \hfill 2022 \\
+NSF Student Conference Award, IEEE INFOCOM \hfill 2021 \\
+Dean's Award, BUET, Bangladesh \hfill 2017, 2016, 2015 \\
+% \textbf{Best Academic Cadet}, Rangpur Cadet College
+% \hfill {2012} \\
+% \textbf{SSC Scholarship (Talent)}, Government of Bangladesh
+% \hfill {2010} \\
+% \textbf{Primary Scholarship (Talent)}, Government of Bangladesh
+% \hfill {2005} \\
+
+
+\section{Publications}
+% {\bf In Preparation:}
+% \vspace{-5pt}
+% {\justifying
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+% \item[1.] \textbf{Md Kamran Chowdhury Shisher} and Yin Sun,
+% ``On the Monotonicity of Information Aging for AR(p) Models," 2024.
+% \end{itemize}}
+% \vspace{-5pt}
+%{\bf Under Submission:}\\
+%\vspace{-5pt}
+%\begin{itemize}
+ %\setlength\itemsep{-5pt}
+%\item[1.] Tasmeen Zaman Ornee, \textbf{Md Kamran Chowdhury Shisher}, Clement Kam, and Yin Sun,
+%``Contextual Status Updating: How to Maximize Situational Awareness?," 2024.
+
+%\item[2.] Cagri Ari, \textbf{Md Kamran Chowdhury Shisher}, Elif Uysal, and Yin Sun,
+%``Goal-Oriented Communications for Real-time Inference with Two-Way Delay," 2024.
+
+%\item[3.] \textbf{Md Kamran Chowdhury Shisher,}  Adam Piaseczny, Yin Sun, and Christopher G. Brinton, ``Computation and Communication Co-scheduling for Timely Multi-Task Inference at the Wireless Edge," 2024.
+%\end{itemize}
+\vspace{5pt}
+{\bf Journal Papers: (Student Mentees \underline{Underlined})}\\
+\vspace{-5pt}
+{\justifying
+\begin{itemize}
+ \setlength\itemsep{-2pt}
+   \item[J7.] \textbf{M. K. C. Shisher,} \underline{A. Piaseczny}, Y. Sun, and C. Brinton, 
+``Computation and Communication Co-scheduling for Multi-Task Remote Inference," under review in {IEEE/ACM Transactions on Networking}. 
+ 
+ \item[J6.] T. Z. Ornee, \textbf{M. K. C. Shisher}, C. Kam, and Y. Sun,
+``Remote Safety Monitoring: Status Updating for Situational Awareness Maximization," under review in {IEEE Transactions on Information Theory}. 
+%Online: \href{https://tzo0017.github.io/TechnicalReport.pdf}{https://tzo0017.github.io/TechnicalReport.pdf}
+
+\item[J5.] \underline{C. Ari}, \textbf{M. K. C. Shisher}, E. Uysal, and Y. Sun,
+``Goal-Oriented Status Updating for Real-time Remote Inference over Networks with Two-Way Delay," IEEE Transactions on Networking, vol. 34, pp. 4011-4025, 2026.
+%Online: \href{https://arxiv.org/abs/2410.08706}{https://arxiv.org/abs/2410.08706}.
+  \item[J4.] \textbf{M. K. C. Shisher,} V. Tripathi, C. Brinton, and M. Chiang,
+``AoI-based Scheduling of Correlated Sources for Timely Inference," {IEEE Transactions on Networking}, vol. 34, pp. 2181-2195, 2026.
+
+\item[J3.] {\bf M. K. C. Shisher}, Y. Sun, and I. Hou,
+``Timely Communications for Remote Inference," {IEEE/ACM Transactions on Networking}, vol. 32, no. 5, pp. 3824-3839, {2024}. \textcolor{blue}{\bf [IEEE ComSoc William R. Bennett Prize (2025) Winner]}
+
+\item[J2.] \textbf{M. K. C. Shisher}, B. Ji, I. Hou, and Y. Sun,
+``Learning and Communications Co-Design for Remote Inference Systems: Feature Length Selection and Transmission Scheduling," {IEEE Journal on Selected Areas in Information Theory}, vol. 4, pp. 524-538, {2023}.
+
+\item[J1.] \underline{K. Yan}, \textbf{M. K. C. Shisher}, and Y. Sun,
+``A Transfer Learning-Based Deep Convolutional Neural Network
+for Detection of Fusarium Wilt in Banana Crops," {AgriEngineering}, vol. 5, no. 4, pp. 2381-2394, {2023}. 
+\end{itemize}}
+%\vspace{-5pt}
+{\bf Conference Papers: (Student Mentees \underline{Underlined})}\\
+\vspace{-5pt}
+{\justifying
+\begin{itemize}
+ \setlength\itemsep{-2pt}
+  \item[C12.] \underline{Y. Zou}, \textbf{M. K. C. Shisher,} V. Tripathi, and C. Brinton,
+``Communication-Efficient Personalized Adaptation
+via Federated-Local Model Merging," submitted, {2026}.
+ \item[C11.] \underline{Y. Zou}, \textbf{M. K. C. Shisher,} V. Tripathi, and C. Brinton,
+``Distributed Online Convex Optimization with Interference Constraints: The Role of Gradient Freshness," submitted, {2026}.
+  \item[C10.] \textbf{M. K. C. Shisher,} V. Tripathi, C. Brinton, and M. Chiang
+``Online Learning of Whittle Indices for Restless Bandits with Non-Stationary Transition Kernels," submitted, {2026}.
+   \item[C9.] \underline{A. Piaseczny}, \textbf{M. K. C. Shisher,} S. Wang, and C.. Brinton
+``RCCDA: Adaptive Model Updates in the Presence of Concept Drift under a Constrained Resource Budget," {NeurIPS, 2025}. \textcolor{blue}{\bf [Acceptance Rate: 24.52\%]}
+ \item[C8.] \textbf{M. K. C. Shisher,} V. Tripathi, C. Brinton, and M. Chiang
+``AoI-based Scheduling of Correlated Sources for Timely Inference," {IEEE ICC, 2025}.
+\item[C7.] \textbf{M. K. C. Shisher,}  A. Piaseczny, Y. Sun, and C. Brinton, ``Computation and Communication Co-scheduling for Timely Multi-Task Inference at the Wireless Edge," {IEEE INFOCOM, 2025}. \textcolor{blue}{\bf [Acceptance Rate: 18.6\%]}
+\item[C6.] \underline{C. Ari}, \textbf{M. K. C. Shisher}, E. Uysal, and Y. Sun,
+``Goal-Oriented Communications for Remote Inference with Two-Way Delay," {IEEE ISIT, 2024}. 
+
+\item[C5.] \textbf{M. K. C. Shisher} and Y. Sun,
+``On the Monotonicity of Information Aging," {IEEE INFOCOM ASoI Workshop, 2024}.
+
+\item[C4.] T. Z. Ornee, \textbf{M. K. C. Shisher}, C. Kam, and Y. Sun,
+``Context-aware Status Updating: Wireless Scheduling for Maximizing Situational Awareness in Safety-critical Systems," {IEEE MILCOM, 2023}.
+
+\item[C3.] \textbf{M. K. C. Shisher} and Y. Sun,
+``How Does Data Freshness Affect Real-time Supervised Learning?" {ACM MobiHoc, 2022}. \textcolor{blue}{\bf [Acceptance Rate: 19.8\%]}
+
+\item[C2.] \textbf{M. K. C. Shisher}, H. Qin, L. Yang, F. Yan, and Y. Sun,
+``The Age of Correlated Features in Supervised Learning based Forecasting," {IEEE INFOCOM AoI Workshop, 2021}.
+
+\item[C1.] \textbf{M. K. C. Shisher}, T. Z. Ornee, and M. F. Hossain,
+ ``QoS aware user association in massive MIMO enabled hetnets for DTU and NDTU traffic," {IEEE ICAEE, 2017}.
+\end{itemize}}
+
+
+\section{Research Experience}
+\begin{enumerate}[label=\arabic*, leftmargin=*, topsep=2pt, itemsep=0pt]
+    \item {\bf Postdoctoral Researcher} \hfill May 2024-Present\\
+    Purdue University \\
+     \vspace{2pt}
+   \textopenbullet~  Optimized Machine learning (ML) model training methods for {\bf resource-constrained edge devices} [C9] and designed a communication-efficient federated fine-tuning algorithm for {\bf Large Language Models} on edge devices [C12]. \\
+   \vspace{2pt}
+   \textopenbullet~ Developed
+   an {\bf online resource allocation algorithm} for restless multi-armed bandits (RMABs) in unknown, non-stationary settings [C10].  \\
+     \vspace{2pt}
+    \textopenbullet~ Developed a {\bf distributed convex optimization} algorithm under interference constraints [C11].  \\
+    %In this work, multiple agents in a distributed system share their current information with a central server and the server sends back the updated learning parameter 
+    
+    \vspace{2pt}
+     \textopenbullet~ Developed {\bf wireless scheduling algorithms for coupled or correlated sources} under interference constraints to minimize remote inference error [J6, C8]. \\
+     %This scheduling problem for correlated sources is a restless bandit problem with a non-separable penalty function.\\
+
+      \vspace{2pt}
+   \textopenbullet~ Jointly optimized {\bf communication scheduling and feature computation} to improve the performance of multi-task remote inference systems [J7, C7].
+   
+   %by solving  problem [J7, C7]. This co-design problem involves {\bf resource allocation with multiple resource constraints}, formally known as Weakly Coupled MDP.  \\
+   
+   \vspace{5pt}
+    \item {\bf Research Assistant} \hfill Aug. 2018-May 2024\\
+    Auburn University \\
+   \textopenbullet~ Introduced a novel research topic on {\bf Remote Inference}. Established an {\bf information-theoretic theory} to interpret {\bf the impact of information freshness on inference error} [C2, C3, C5] by using a generalized conditional entropy and by introducing the concept of $\epsilon$-Markov chain and {\bf $\epsilon$-data processing inequality}. \\
+   \textopenbullet~ Optimized the performance of remote inference systems by designing {\bf scheduling algorithms} for both the single-user, single channel and the multi-user, multi-channel systems [J2, J3, C6, C3]. We proposed a new {\bf ``selection-from-buffer"} scheduling model to optimize the remote inference systems. Paper [J3] based on this research received \textcolor{blue}{IEEE ComSoc William R. Bennett Prize (2025)}.
+\end{enumerate}
+
+\section{Teaching Experience}
+  % \begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+% Using the university name as the header for the specific contribution
+% \begin{itemize}[leftmargin=*, topsep=0pt, itemsep=-2pt]
+%     \item Delivered in-class lectures at Purdue University on (1) Routing and Shortest Paths and (2) Transmission Control Protocol for the course {\bf ECE 547: Introduction to Computer Communication Networks, Fall 2024}
+% \end{itemize}
+
+%\vspace{0.8em} % Adds a bit of space between the distinct roles
+
+% Clearly defining the formal role at Auburn
+% \textbf{Teaching Assistant}, \textit{Auburn University}
+\begin{enumerate}[label=\arabic*., leftmargin=*, topsep=2pt, itemsep=-4pt]
+    \item {\bf Guest Lecturer} \hfill Fall 2024\\
+    ECE 547: Introduction to Computer Communication Networks \\
+    Purdue University 
+    \item {\bf Teaching Assistant}\hfill Spring 2023, 2024\\
+     {ELEC-5970/6970: Applied Statistical and Machine Learning}\\
+     Auburn University
+     \item {\bf Teaching Assistant}\hfill Spring 2020, 2021, 2022, Fall 2022\\
+     {ELEC-7970: Reinforcement Learning}\\
+     Auburn University
+       \item {\bf Teaching Assistant}\hfill Fall 2022\\
+     {ELEC-2120: Signals and Systems}\\
+     Auburn University\\
+       \item {\bf Lecturer}\hfill Nov 2017-June 2018\\
+      {Bangladesh Army University of Science and Technology} 
+\begin{itemize}[leftmargin=*, topsep=0pt, itemsep=-2pt]
+    \item Courses: Communication Theory, Digital Signal Processing, and Telecommunication Engineering
+    \item Labs: Communication Engineering, Digital Signal Processing
+\end{itemize}
+\end{enumerate}
+
+
+\section{Research Proposals}
+%\textopenbullet~Contributed to the writing of the following Grant Proposals:
+
+\vspace{5pt}
+\textbf{NSF VINES: Track 2}: {NextG Smart Factory/Manufacturing}, submitted Sep. 2025 
+\begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+         \item[\textbullet] \textbf{Contributions:} Thrust. Smart Factory/Manufacturing Operational Status.
+        \item[\textbullet] \textbf{PIs:}  H. Kwon (Wichita State U), S. Kim (Iowa State U), M. Zhang (Mississippi State U); Senior Personnel include C. Brinton (Purdue U) and others from Ericsson Research, Penn State, Arizona State U, and UT Arlington.
+    \end{itemize}
+\vspace{0.8em} 
+\textbf{NSF CPS: Medium}: {Name-Based Design of Distributed Intelligence for Smarter Communities}, submitted June 2025 
+    \begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+     \item[\textbullet] \textbf{Contributions:} Thrust. Fine-Grained Control: Updating Models under Heterogeneity and Dynamics
+\item[\textbullet] \textbf{PIs:} E. Yeh (Northeastern U), C. Brinton (Purdue U), S. Sannigrahi (Tennessee Tech), H. Newman (Caltech). 
+    \end{itemize}
+\vspace{0.8em} 
+\textbf{NSF PDaSP}: {Privacy-Preserving Aggregation of Demand Flexibility for Sustainable Power Systems}, submitted Sep. 2024 
+    \begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+    \item[\textbullet] \textbf{Contributions:} Thrust. Tackling Hierarchical and Heterogeneous Environments
+\item[\textbullet] \textbf{PIs:} J. Qin (Purdue U), A. Hashemi (Purdue U), C. Brinton (Purdue U), K. Poolla (UC Berkeley).
+    \end{itemize}
+
+\section*{Student Mentoring}
+{\bf  Ananth Ram Rajagopalan}, Purdue University Graduate Student \hfill Nov 2025-Present \\
+{\bf Yinan Zou}, Purdue University Graduate Student \hfill Jan 2025-Present \\
+{\bf Adam Piaseczny}, Purdue University Graduate Student \hfill May 2024-Present \\
+{\bf Sam Chamoun}, Auburn University Undergraduate Student \hfill Aug. 2023-May 2024 \\
+{\bf Zachary Gayford}, Auburn University Undergraduate Student \hfill Jan 2024-May 2024 \\
+{\bf Cason B. Vazquez}, Auburn University Undergraduate Student \hfill Aug 2023-Dec 2023 \\
+{\bf Justin Tran}, Auburn University Undergraduate Student \hfill May 2021-May 2022 \\
+{\bf Cagri Ari}, Middle East Technical University Graduate Student \hfill Aug 2023-Present \\
+{\bf Mengxue Li}, Tuskegee University Graduate Student \hfill Aug 2023-Present \\
+{\bf Kevin Yan}, Auburn High School Student \hfill Aug 2022-Dec 2023 \\
+
+% \section{Student Mentoring}
+% \textbf{Yinan Zou}, Purdue University Graduate Student \hfill{Jan 2025-Present}\\
+% \textbf{Adam Piaseczny}, Purdue University Graduate Student \hfill{May 2024-Present}\\
+% \textbf{Sam Chamoun}, Auburn University Undergraduate Student \hfill{Aug. 2023-May 2024}\\
+% \textbf{Zachary Gayford}, Auburn University Undergraduate Student \hfill{Jan 2024-May 2024}\\
+% %\begin{itemize}
+% %\item Currently working on designing semantic communication. 
+% %\end{itemize}
+% \textbf{Cason B. Vazquez}, Auburn University Undergraduate Student \hfill{Aug 2023-Dec 2023}\\
+% %\begin{itemize}
+% %\item Worked on the simulation of the leader-follower robotic system.
+% %\item Project video: \href{https://www.youtube.com/watch?v=_z4FHuu3-ag}{https://www.youtube.com/watch?v=_z4FHuu3-ag}
+% %\end{itemize}
+% \textbf{Justin Tran}, Auburn University Undergraduate Student \hfill{May 2021-May 2022}\\
+% %\begin{itemize}
+% %\item Worked on optimal pilot scheduling for throughput maximization. 
+% %\item Project webpage: \href{http://webhome.auburn.edu/~yzs0078/project_Justin/project_Justin.html}{http://webhome.auburn.edu/\texttildelow{}yzs0078/project\_Justin/project\_Justin.html}
+% %\end{itemize}
+% \textbf{Cagri Ari}, Middle East Technical University Graduate Student \hfill{Aug 2023-Present}\\
+% %\begin{itemize}
+% %\item Designed scheduling strategies for goal-oriented communications for remote inference systems with two-way delay. 
+% %\item A paper is submitted at IEEE ISIT, 2024.\\
+% %\end{itemize}
+% \textbf{Mengxue Li}, Tuskegee University Graduate Student \hfill{Aug 2023-Present}\\
+% %\begin{itemize}
+% %\item Currently working on a food pantry visit forecasting project.\\ 
+% %\item Project webpage: \href{https://github.com/Kamran0153/Food-Pantry-Household-Visit-Forecasting}{https://github.com/Kamran0153/Food-Pantry-Household-Visit-Forecasting}  
+% %\end{itemize}
+% \textbf{Kevin Yan}, Auburn High School Student \hfill{Aug 2022-Dec 2023}
+% %\begin{itemize}
+% %\item Worked on transfer learning-based Deep
+% %Convolutional Neural Network for Detection of Fusarium Wilt in Banana Crops.  
+% %\item A paper from this project is published in \emph{AgriEngineering}. 
+% %\end{itemize}
+%     % \begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+%     %     \item Delivered in-class coding lectures on K-nearest neighbors algorithm, SVM, decision tree, XGBoost, neural network, image classification with transfer learning, text classification with LSTM.
+%     %     \item Designed assignments and mentored students in their projects.
+%     % \end{itemize}
+
+%     % \item {\bf ELEC-7970: Reinforcement Learning} \hfill Spring 2020, 2021, 2022, Fall 2022
+%     % \begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+%     %     \item Delivered in-class coding lectures on value iteration, policy iteration, temporal difference, SARSA, Q-learning, DQN, and REINFORCE algorithms.
+%     %     \item Designed assignments.
+%     % \end{itemize}
+
+%     % \item {\bf ELEC-2120: Signals and Systems} \hfill Fall 2022
+%     % \begin{itemize}[leftmargin=1.5em, topsep=0pt, itemsep=-2pt]
+%     %     \item Delivered lab lectures and guided students in lab experiments.
+%     % \end{itemize}
+%     % \end{enumerate}
+
+
+
+
+
+
+
+
+% \textbf{Teaching at Purdue University} \hfill{Fall 2024}
+% \vspace{-5pt}
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+% \item Delivered in-class lectures on {\bf (1) Routing and Shortest Paths} and {\bf (2) Transmission Control Protocol} for the course {\bf ECE 547: Introduction to Computer Communication Networks.}
+% \end{itemize}
+% \textbf{Teaching at Auburn University}\\
+% {\bf 1. ELEC-5970/6970: Applied Statistical and Machine Learning}
+% \hfill{Spring 2023, 2024}
+% \vspace{-5pt}
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+% \item Delivered in-class coding lectures on K-nearest neighbors algorithm, SVM, decision tree, XGBoost, neural network, image classification with transfer learning, text classification with LSTM.
+% \item Designed assignments and mentored students in their projects.  
+% \end{itemize}
+
+
+% %\textbf{Teaching Assistant} 
+% {\bf 2. ELEC-7970: Reinforcement Learning}
+% \hfill{Spring 2020, 2021, 2022, Fall 2022}\\
+% \vspace{-5pt}
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+% \item Delivered in-class coding lectures on value iteration, policy iteration, temporal difference, SARSA, Q-learning, DQN, and REINFORCE algorithms.
+% \item Designed assignments.
+% %\vspace{-10pt}
+% %\item Graded the homeworks,
+% %quizzes, and labs for approximately 55 students.
+
+% \end{itemize}
+
+% %\textbf{Teaching Assistant} 
+% {\bf 3. ELEC-2120: Signals and Systems}
+% \hfill{Fall 2022}
+% \vspace{-5pt}
+% \begin{itemize}
+%  \setlength\itemsep{-2pt}
+% \item Delivered lab lectures and guided students in lab experiments. %Graded homework and lab reports. 
+% \end{itemize}
+
+% \textbf{Lecturer} Department of Electrical and Electronic Engineering 
+% \hfill{Nov 2017-June 2018}\\
+% Bangladesh Army University of Science and Technology
+
+% Courses: Telecommunication Engineering, Electrical Properties of Materials \\
+% {Labs}: Communication Engineering, Digital Signal Processing \\
+
+
+
+% \section{Proposals/Grants Experience}
+% 1. {\bf NSF Collaborative Research (PDaSP)}: Track 2:  Privacy-Preserving Aggregation of Demand Flexibility for Sustainable Power Systems (Under Submission) (PIs: Junjie Qin (lead), Abolfazl Hashemi and Christopher Brinton,  ECE, Purdue University, Kameshwar Poolla, EECS and ME, University of California at Berkeley)\\
+% {\bf Contribution:} {\bf Assisted in writing the proposal} \\
+
+%2. {\bf NSF CAREER}: Semantic and Goal-oriented Status Updating for Real-time
+%Inference, Monitoring, and Decision-Making (PI: Yin Sun, Auburn University)\\
+%{\bf Contribution:} {\bf 
+%2. Contributed to {\bf NSF CAREER}: Semantic and Goal-oriented Status Updating for Real-time Inference, Monitoring, and Decision-Making (PI: Yin Sun, Auburn University) \\
+%{\bf Result:} Proposal awarded \$500,000.00 by the National Science Foundation (NSF)
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section*{Talks}
+
+\textbf{Computation and Communication Co-scheduling for Timely Multi-Task Inference at the Wireless Edge} \\
+\quad\textbullet~ IEEE INFOCOM, London, UK \hfill May 2025
+\medskip
+
+\textbf{Timely Inference over Networks} \\
+\quad\textbullet~ PhD Dissertation Defense \hfill April 2024 \\
+\quad\textbullet~ Invited Talk at Purdue University, 2024 \hfill March 2024 \\
+\quad\textbullet~ Invited Talk at Northwestern University, 2024 \hfill March 2024 \\
+\quad\textbullet~ Invited Poster Presentation at ITA, 2024 \hfill Feb 2024 \\
+\quad\textbullet~ Invited talk at Southeast Control Conference, 2024 \hfill Feb 2024 \\
+\quad\textbullet~ Talk at Dept. of ECE, Auburn University \hfill Feb 2024
+\medskip
+
+\textbf{Learning and Communications Co-design For Remote Inference: Feature Length Selection and Transmission Scheduling} \\
+\quad\textbullet~ Invited Talk at University of Maryland, College Park, MD \hfill Oct 2023 \\
+\quad\textbullet~ Graduate Engineering Research Showcase, Auburn University \hfill Oct 2023
+\medskip
+
+\textbf{Communications of Timely Information for Real-time Machine Learning and Networked Intelligence} \\
+\quad\textbullet~ North American School of Information Theory, Philadelphia, PA \hfill June 2023
+\medskip
+
+\textbf{How Does Data Freshness Affect Real-time Supervised Learning?} \\
+\quad\textbullet~ Information Theory Application Workshop, San Diego, CA \hfill Feb 2023 \\
+\quad\textbullet~ Auburn University Research Symposium (Poster Presentation) \hfill March 2023 \\
+\quad\textbullet~ ACM MobiHoc, Seoul, South Korea. \hfill Oct 2022 \\
+\quad\textbullet~ College of Engineering Research Showcase at the U.S. Space and Rocket Center, Huntsville, AL (Poster Presentation) \hfill Aug 2022
+\medskip
+
+\textbf{The Age of Correlated Features in Supervised Learning based Forecasting} \\
+\quad\textbullet~ IEEE INFOCOM AOI Workshop, Vancouver, BC, Canada (virtual) \hfill May 2021
+% \section{Talks}
+% %{\bf AoI-based Scheduling of Correlated Sources for Remote Inference}
+% %\vspace{-5pt}
+% %\begin{itemize}
+%  %\setlength\itemsep{-5pt}
+% %\item Invited Talk at Purdue University, 2024
+% %\hfill {March 2024}
+% %\end{itemize}
+% {\bf Computation and Communication Co-scheduling for Timely Multi-Task Inference at the Wireless Edge}
+% \vspace{-5pt}
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+%  \item IEEE INFOCOM, London, UK \hfill {May 2025}
+% \end{itemize}
+% {\bf Timely Inference over Networks}
+% \vspace{-5pt}
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+%  \item PhD Dissertation Defense \hfill {April 2024}
+% \item Invited Talk at Purdue University, 2024
+% \hfill {March 2024}
+
+% \item Invited Talk at Northwestern University, 2024
+% \hfill {March 2024}
+
+% \item Invited Poster Presentation at ITA, 2024
+% \hfill {Feb 2024}
+
+
+% \item Invited talk at Southeast Control Conference, 2024
+% \hfill {Feb 2024}
+
+% \item Talk at Dept. of ECE, Auburn University \hfill {Feb 2024}
+
+% \end{itemize}
+
+% {\bf Learning and Communications Co-design For Remote Inference: Feature Length Selection and Transmission Scheduling}
+% \vspace{-5pt}
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+% \item Invited Talk at University of Maryland, College Park, MD 
+% \hfill {Oct 2023}\\
+% %\vspace{-5pt}
+% \item Graduate Engineering Research Showcase, Auburn University  \hfill {Oct 2023}\\
+
+% \end{itemize}
+% \vspace{-5pt}
+% {\bf Communications of Timely Information for Real-time Machine Learning and Networked Intelligence}\\
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+% \item North American School of Information Theory, Philadelphia, PA %Available: %\href{https://www.dropbox.com/scl/fi/oozad8u7ok3fjwnhqvg0z/Kamran_Poster_NASIT.pdf?rlkey=vw4c7iw2p7zt5kkd4b3uno11e&dl=0}{[Online]}
+% \hfill {June 2023}
+% \end{itemize}
+% \vspace{-5pt}
+% {\bf How Does Data Freshness Affect Real-time Supervised Learning?}
+% \begin{itemize}
+%  \setlength\itemsep{-5pt}
+%     \item Information Theory Application Workshop, San Diego, CA %Available:  %\href{https://www.dropbox.com/s/2jg79pf57dpcze2/Kamran_Poster_ITA.pdf?dl=0}{[Online]}
+%     \hfill{Feb 2023} 
+%    % \vspace{-5pt}
+%     \item Auburn University Research Symposium (Poster Presentation) \hfill{March 2023}
+%     %\vspace{-5pt}
+%     \item ACM MobiHoc, Seoul, South Korea. \hfill{Oct 2022}
+%     %\vspace{-5pt}
+%     \item College of Engineering Research Showcase at the U.S. Space and Rocket Center, Huntsville, AL \\
+%     (Poster Presentation) \hfill{Aug 2022}
+% \end{itemize}
+% \vspace{-5pt}
+% {\bf The Age of Correlated Features in Supervised Learning based Forecasting}\\
+% \begin{itemize}
+%     \item IEEE INFOCOM AoI Workshop, Vancouver, BC, Canada (virtual)
+% \hfill{May 2021}
+% \end{itemize}
+
+
+\section{Services}
+{\bf Reviewer for Journal Manuscript Submissions}
+\vspace{-5pt}
+\begin{itemize}
+ \setlength\itemsep{-5pt}
+ \item IEEE Transactions on Information Forensics \& Security, 2025
+ \item IEEE Transactions on Signal Processing, 2025
+ \item IEEE Transactions on Communications, 2024, 2025
+\item IEEE Transactions on Networking, 2024, 2025
+\item IEEE Transactions on Mobile Computing, 2024, 2025
+\item IEEE Transactions on Network Science and Engineering, 2024\\
+\item IEEE Transactions on Green Communications and Networking, 2024 \\
+   
+\item IEEE Journal of Communications and Networks, 2020, 2023 \\
+\item IEEE Journal on Selected Areas in Information Theory, 2023 \\
+\item IEEE Open Journal of the Communications Society, 2023 \\
+\item IEEE Transactions on Wireless Communications, 2022, 2024 \\
+\item IEEE Journal on Selected Areas in Communication, 2020 
+
+\end{itemize}
+\vspace{-5pt}
+{\bf Reviewer for Conference Manuscript Submissions}
+\vspace{-5pt}
+\begin{itemize}
+ \setlength\itemsep{-5pt}
+\item IEEE ITW, 2024
+\item IEEE WiOpt, 2024
+\item ACM MobiHoc ASoI Workshop, 2024
+\item IEEE ISIT, 2022 
+\item IEEE INFOCOM, 2020, 2022
+\item IEEE WCNC, 2021, 2022
+\item IEEE INFOCOM AoI Workshop, 2019, 2020
+\end{itemize}
+{\bf TPC member}
+\begin{itemize}
+ \setlength\itemsep{-5pt}
+    \item IEEE INFOCOM, 2027
+    \item ACM MobiHoc, 2026
+    \item IEEE WCNC, 2026
+    \item IEEE WCNC, 2022
+    \item IEEE WCNC, 2021
+\end{itemize}
+{\bf Conference Session Chair}
+\begin{itemize}
+ \setlength\itemsep{-5pt}
+     \item IEEE INFOCOM ASoI Workshop, 2025
+    \item IEEE INFOCOM DTWin Workshop, 2025 
+\end{itemize}
+Maintainer of an online paper repository on Age of Information \hfill Aug 2018-May 2024 \\
+Volunteer on E-Day, Auburn University, Auburn, AL \hfill Feb 2020 \\
+Organizing Secretary, Bangladesh Student Organization, Auburn University \hfill Aug 2022-Aug 2023 \\
+% House Cultural Prefect, Rangpur Cadet College, Bangladesh \hfill 2012 \\
+% Junior Prefect, Rangpur Cadet College, Bangladesh \hfill 2011 \\
+
+% \section{Research Experience}
+% \textbf{ECE, Purdue University} \hfill{May 2024-Present}\\
+% {\bf Supervisor}: Christopher G. Brinton and Mung Chiang\\
+% %\underline{{\bf Area of Research}} \\
+% \vspace{-5pt}
+% \begin{itemize}
+%   \setlength\itemsep{-5pt}
+%     \item {\bf Networking for Intelligent Systems}\\
+%      --~~Developed a communication and computation co-design for Remote Inference.\\
+%     --~~Wireless scheduling methodology for coupled or correlated updates. 
+%     \item {\bf Online Learning}\\
+%     --~~Online ML training under concept drift.\\
+%     --~~Online learning of Whittle Index for non-stationary environments.
+%      \item {\bf Distributed Learning}\\
+%        --~~Distributed online convex optimization algorithm with interference constraints.
+% \end{itemize}
+% \textbf{ECE, Auburn University} \hfill{August 2018-April 2024}\\
+% {\bf Supervisor}: Yin Sun\\
+% %\underline{{\bf Area of Research}} \\
+% \vspace{-5pt}
+% \begin{itemize}
+%   \setlength\itemsep{-5pt}
+%     \item {\bf Networking for Remote Inference}\\
+%     --~~Designed networks to improve inference performance of networked AI/ML systems\\
+%     --~~Buffer management: We designed a new ``Selection-from-buffer" model. \\
+%     --~~Developed optimal scheduling policies.\\
+%      \item {\bf Information-Theoretic Interpretation of Information Freshness}\\
+%        --~~Developed an information theoretic-based tools to assess the value of fresh information. %in real-time systems.
+%       \item {\bf Multi-action Restless Multi-armed bandit}\\
+%        --~~Two new algorithms for Multi-action Restless Multi-armed bandit: (a) Duality-based action selection plus Whittle Index-based policy and (b) Gain index-based Policy.
+% \end{itemize}
+
+
+
+
+% \section{Proposal Writing Experience}
+% {\bf NSF VINES}: Track 2: ``NextG Smart Factory/Manufacturing," submitted Sep. 2025.\\
+% {\bf Contribution}: Assisted in writing proposal. (PIs: H. Kwon [Wichita State U], S. Kim [Iowa State U], M. Zhang [Mississippi State U]; Senior Personnels: C. Brinton [Purdue], R. Chou [U Texas Arlington], L. Ernström [Ericsson Research], S. Hussain [Penn State], M. Gupta [Ericsson Research], T. Kim [Arizona State U], V. Marojevic [Mississippi State U], A. Mukherjee [Tiami Networks], S. Monroy [Wichita State U], J. Lynam [Ericsson Research]) \\
+% {\bf NSF CPS}: Medium: ``Name-Based Design of Distributed Intelligence for Smarter Communities," submitted June 2025 \\
+% {\bf Contribution}: Assisted in writing proposal. (PIs: E. Yeh [Northeastern U], C. Brinton [Purdue], Sannigrahi [Tennessee Tech], and H. Newman [Caltech]) \\
+% {\bf NSF PDaSP}:  ``Privacy-Preserving Aggregation of Demand Flexibility for Sustainable Power Systems," submitted Sep. 2024. \\
+% {\bf Contribution}: Assisted in writing proposal. (PIs: J. Qin [Purdue], A. Hashemi [Purdue], C. Brinton [Purdue], and K. Poolla [UC Berkeley]) 
+
+
+
+% \section{Awards}
+
+% \textbf{Research Profile}, ACM SIGMETRICS Performance Evaluation Review
+% \hfill {Dec 2023}\\
+% \textbf{NSF Student Travel Grant,} ACM MobiHoc (Amount: 1200 USD)
+% \hfill {Oct 2023} \\
+% \textbf{NSF Travel Grant}, North American School of Information Theory (Amount: 400 USD)
+% \hfill {June 2023} \\
+% \textbf{ACM SIGMOBILE Student Travel Grant}, ACM MobiHoc (Amount: 1000 USD)
+% \hfill {Oct 2022} \\
+% \textbf{IEEE INFOCOM Student Conference Grant}
+% \hfill {June 2022} \\
+% \textbf{NSF Student Conference Award}, IEEE INFOCOM
+% \hfill {June 2021} \\
+% \textbf{Dean's Award}, BUET, Bangladesh
+% \hfill {2017, 2016, 2015}\\
+% \textbf{Best Cadet}, Rangpur Cadet College
+% \hfill {2012} \\
+% \textbf{SSC Scholarship (Talent)}, Government of Bangladesh
+% \hfill {2010} \\
+% \textbf{Primary Scholarship (Talent)}, Government of Bangladesh
+% \hfill {2005} \\
+% %\vspace{-16pt}
+
+\section{Professional Membership}
+
+IEEE Member
+\\
+IEEE Information Theory Society Member\\
+IEEE Communication Society Member\\
+ACM SIGMOBILE Member
+
+\iffalse
+\section{Skills}
+    %\resumeSubHeadingListStart
+        {\bf Programming Language}: Python, C, MATLAB, Object Oriented Programming\\
+        {\bf Mathematics}: Optimization and Decision Theory, Markov Decision Process, Dynamic Programming, Probability, Information Theory, Multi-armed Bandit\\
+        {\bf Machine Learning}: Supervised Learning, Deep Learning, Reinforcement Learning, Transfer Learning, CNN, RNN, Federated Learning\\
+        {\bf Machine Learning Tools}: TensorFlow, Keras, Scikit-learn, Pandas, Numpy
+\fi
+\end{document}
+
