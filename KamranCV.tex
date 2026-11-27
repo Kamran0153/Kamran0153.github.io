@@ -1,0 +1,366 @@
+% =============================================================
+%  Academic CV template (classic two-column "res" style)
+%  Small-caps section labels in the left column, content on the
+%  right, bold entry titles with right-aligned dates.
+%  Compile with:  pdflatex cv.tex
+% =============================================================
+\documentclass[10pt,letterpaper]{article}
+
+% ---------- Layout ------------------------------------------------
+% \labelwidth = width of the left heading column
+% \labelgap   = space between heading column and body text
+\newlength{\cvlabelwidth}\setlength{\cvlabelwidth}{1.05in}
+\newlength{\cvlabelgap}\setlength{\cvlabelgap}{0.25in}
+
+\usepackage[letterpaper,
+            left=1.9in,     % = outer margin (0.6in) + label width + gap
+            right=0.65in,
+            top=1in,bottom=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{needspace}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue,citecolor=blue]{hyperref}
+
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagestyle{plain}
+
+% ---------- Commands ----------------------------------------------
+% Name centered across the full page (label column + body)
+\newcommand{\cvname}[1]{%
+  \vspace*{-0.35in}%
+  \noindent\hspace*{-\dimexpr\cvlabelwidth+\cvlabelgap\relax}%
+  \makebox[\dimexpr\textwidth+\cvlabelwidth+\cvlabelgap\relax][c]{\Large\bfseries #1}%
+  \par\vspace{14pt}}
+
+% \cvsection{Line one\\Line two}  -> small-caps label in the left column.
+% The label is a zero-height box, so whatever follows (text, a list,
+% a \cvsubsection) starts on the same line as the label.
+\newcommand{\cvsection}[1]{%
+  \par\addvspace{16pt}\nointerlineskip
+  \vbox to 0pt{\kern\baselineskip
+    \hbox{\hskip-\dimexpr\cvlabelwidth+\cvlabelgap\relax
+      \raisebox{0pt}[0pt][0pt]{\parbox[t]{\cvlabelwidth}{\raggedright\scshape #1}}}%
+    \vss}%
+  \prevdepth=0pt\nobreak}
+
+% \cvsubsection{Title} -> bold-free sub-heading inside a section (e.g., "Keynotes")
+% (no extra space when it directly follows \cvsection, so it sits beside the label)
+\newcommand{\cvsubsection}[1]{\par
+  \ifnum\lastpenalty=10000 \else\addvspace{8pt}\needspace{3\baselineskip}\fi
+  \noindent #1\par\nobreak\addvspace{6pt}}
+
+% \cventry{Bold title}{Dates}{Second line (department, institution)}
+\newcommand{\cventry}[3]{%
+  \noindent\textbf{#1}\hfill #2\par
+  \ifx&#3&\else\noindent #3\par\fi
+  \addvspace{10pt}}
+
+% \cvdegree{Degree, Institution}{Dates}{Details (\\-separated)}
+\newcommand{\cvdegree}[3]{%
+  \noindent #1\hfill #2\par
+  \ifx&#3&\else\vspace{4pt}{\leftskip=1.2em\noindent #3\par}\fi
+  \addvspace{10pt}}
+
+% \cvitem{Left text}{Right text (year)} -> one line with a right-aligned date
+\newcommand{\cvitem}[2]{\noindent #1\hfill #2\par}
+
+% Numbered list used for grants, publications, services, ...
+\newlist{cvlist}{enumerate}{1}
+\setlist[cvlist]{label=\arabic*.,leftmargin=*,align=right,
+                 itemsep=2pt,topsep=2pt,parsep=0pt}
+% Publication list numbered in reverse (newest first):
+% \begin{publist}{J}{7}{7} -> [J7], [J6], ..., [J1]
+\makeatletter
+\protected\def\revpubnum{\number\numexpr\pubtotal+1-\c@enumi\relax}
+\makeatother
+\newenvironment{publist}[2]{%
+  \def\pubtotal{#2}%
+  \begin{enumerate}[label={[#1\revpubnum]},
+                    leftmargin=2.6em,labelwidth=2.3em,labelsep=0.3em,align=left,
+                    itemsep=3pt,topsep=2pt,parsep=0pt]}%
+  {\end{enumerate}}
+
+% Bullet list (research experience, talks, services)
+\newlist{cvbullets}{itemize}{1}
+\setlist[cvbullets]{label=\textbullet,leftmargin=1.2em,
+                    itemsep=1pt,topsep=2pt,parsep=0pt}
+
+% Author-list markup
+\newcommand{\me}{\textbf{M.~K.~C.~Shisher}}      % myself
+\newcommand{\mentee}[1]{\underline{#1}}          % student mentee
+\newcommand{\note}[1]{\textcolor{blue}{\textbf{[#1]}}}  % acceptance rate / award
+
+% =============================================================
+\begin{document}
+
+\cvname{Md Kamran Chowdhury Shisher}
+
+% ---------------------------------------------------------------
+\cvsection{Contact\\Information}
+Assistant Professor\\
+Department of Electrical and Computer Engineering\\
+University of Colorado Colorado Springs (UCCS)\\
+Colorado Springs, CO, USA\\
+E-mail: \href{mailto:mshisher@uccs.edu}{mshisher@uccs.edu},
+        \href{mailto:kamranshisher@gmail.com}{kamranshisher@gmail.com}\\
+Homepage: \href{https://kamran0153.github.io}{kamran0153.github.io}\\
+Google Scholar: \href{https://scholar.google.com/citations?user=LKaamzMAAAAJ&hl=en}{https://scholar.google.com/citations?user=LKaamzMAAAAJ}\\
+LinkedIn: \href{https://www.linkedin.com/in/kamranshisher/}{www.linkedin.com/in/kamranshisher}
+
+% ---------------------------------------------------------------
+\cvsection{Research\\Interests}
+Communication Networks\\
+Wireless Communications\\
+Goal-oriented and Semantic Communication\\
+Networked Control Systems\\
+Machine Learning\\
+Stochastic Optimization and Control
+
+% ---------------------------------------------------------------
+\cvsection{Professional\\Membership}
+IEEE Member\\
+IEEE Information Theory Society Member\\
+IEEE Communications Society Member\\
+ACM SIGMOBILE Member
+
+% ---------------------------------------------------------------
+\cvsection{Professional\\Experience}
+\cventry{Assistant Professor}{Aug. 2026 -- present}
+        {Department of Electrical and Computer Engineering, University of Colorado Colorado Springs}
+\cventry{Postdoctoral Researcher}{May 2024 -- Aug. 2026}
+        {Department of Electrical and Computer Engineering, Purdue University\\
+         Advisors: Prof.\ Christopher G. Brinton and Prof.\ Mung Chiang}
+\cventry{Research Assistant}{Aug. 2018 -- May 2024}
+        {Department of Electrical and Computer Engineering, Auburn University\\
+         Advisor: Prof.\ Yin Sun}
+\cventry{Teaching Assistant}{Jan. 2020 -- May 2024}
+        {Department of Electrical and Computer Engineering, Auburn University}
+\cventry{Lecturer}{Nov. 2017 -- June 2018}
+        {Department of Electrical and Electronic Engineering,
+         Bangladesh Army University of Science and Technology}
+
+% ---------------------------------------------------------------
+\cvsection{Education}
+\cvdegree{Ph.D. in Electrical Engineering, Auburn University, Auburn, AL}{Aug. 2018 -- May 2024}
+  {Thesis: Timely Inference over Networks\\
+   Advisor: Prof.\ Yin Sun\\
+   Award: Auburn University Graduate School Distinguished Dissertation Award}
+\cvdegree{M.S. in Electrical Engineering, Auburn University, Auburn, AL}{Aug. 2022}{}
+\cvdegree{B.Sc. in Electrical and Electronic Engineering}{Feb. 2013 -- Sep. 2017}
+  {Bangladesh University of Engineering and Technology (BUET), Dhaka, Bangladesh\\
+   Awards: Dean's Award (2015, 2016, 2017)}
+
+% ---------------------------------------------------------------
+\cvsection{Honors and\\Awards}
+\cvitem{Auburn University Graduate School Distinguished Dissertation Award}{2026}
+\cvitem{ECE Nominee for Purdue CoE Outstanding Postdoc Award}{2026}
+\cvitem{IEEE ComSoc William R. Bennett Prize}{2025}
+\cvitem{Research Profile featured in ACM SIGMETRICS Performance Evaluation Review}{2023}
+\cvitem{NSF Student Travel Grant, ACM MobiHoc}{2023}
+\cvitem{NSF Travel Grant, North American School of Information Theory}{2023}
+\cvitem{ACM SIGMOBILE Student Travel Grant, ACM MobiHoc}{2022}
+\cvitem{IEEE INFOCOM Student Conference Grant}{2022}
+\cvitem{NSF Student Conference Award, IEEE INFOCOM}{2021}
+\cvitem{Dean's Award, BUET, Bangladesh}{2015, 2016, 2017}
+
+% ---------------------------------------------------------------
+\cvsection{Teaching}
+\begin{cvlist}
+  \item ECE 4650/5650, Modern Digital Signal Processing, UCCS, Fall 2026\\
+        Hours: 3 lecture hours\\
+        Enrollment: 19 students
+  \item ECE 4680, Signal Processing Laboratory, UCCS, Fall 2026\\
+        Hours: 1 lab hour\\
+        Enrollment: 9 students
+\end{cvlist}
+
+% ---------------------------------------------------------------
+\cvsection{Students}
+\cvsubsection{Current Ph.D. Students (1)}
+\cvitem{Justice Obrey, University of Colorado Colorado Springs}{Fall 2026 -- present}
+
+% ---------------------------------------------------------------
+\cvsection{Student\\Mentoring\\ Outside UCCS}
+\cvsubsection{Graduate Students (5)}
+\cvitem{Ananth Ram Rajagopalan, Purdue University}{Nov. 2025 -- present}
+\cvitem{Yinan Zou, Purdue University}{Jan. 2025 -- present}
+\cvitem{Adam Piaseczny, Purdue University}{May 2024 -- present}
+\cvitem{Cagri Ari, Middle East Technical University}{Aug. 2023 -- May 2024}
+\cvitem{Mengxue Li, Tuskegee University}{Aug. 2023 -- May 2024}
+\cvsubsection{Undergraduate Students (4)}
+\cvitem{Sam Chamoun, Auburn University}{Aug. 2023 -- May 2024}
+\cvitem{Zachary Gayford, Auburn University}{Jan. 2024 -- May 2024}
+\cvitem{Cason B. Vazquez, Auburn University}{Aug. 2023 -- Dec. 2023}
+\cvitem{Justin Tran, Auburn University}{May 2021 -- May 2022}
+\cvsubsection{High School Students (1)}
+\cvitem{Kevin Yan, Auburn High School}{Aug. 2022 -- Dec. 2023}
+
+% ---------------------------------------------------------------
+\cvsection{Publications}
+Summary: 7 journal papers (2 under review) and 12 conference papers (2 submitted)\\
+(\me: myself; \mentee{Underlined}: student mentee)
+
+\cvsubsection{Journal Papers}
+\begin{publist}{J}{7}
+  \item \me, \mentee{A. Piaseczny}, Y. Sun, and C. Brinton,
+        ``Computation and Communication Co-scheduling for Multi-Task Remote Inference,''
+        under review in \emph{IEEE/ACM Transactions on Networking}.
+  \item T. Z. Ornee, \me, C. Kam, and Y. Sun,
+        ``Remote Safety Monitoring: Status Updating for Situational Awareness Maximization,''
+        under review in \emph{IEEE Transactions on Information Theory}.
+  \item \mentee{C. Ari}, \me, E. Uysal, and Y. Sun,
+        ``Goal-Oriented Status Updating for Real-time Remote Inference over Networks with
+        Two-Way Delay,'' \emph{IEEE Transactions on Networking}, vol.~34, pp.~4011--4025, 2026.
+  \item \me, V. Tripathi, C. Brinton, and M. Chiang,
+        ``AoI-based Scheduling of Correlated Sources for Timely Inference,''
+        \emph{IEEE Transactions on Networking}, vol.~34, pp.~2181--2195, 2026.
+  \item \me, Y. Sun, and I. Hou,
+        ``Timely Communications for Remote Inference,''
+        \emph{IEEE/ACM Transactions on Networking}, vol.~32, no.~5, pp.~3824--3839, 2024.
+        \note{IEEE ComSoc William R. Bennett Prize (2025) Winner}
+  \item \me, B. Ji, I. Hou, and Y. Sun,
+        ``Learning and Communications Co-Design for Remote Inference Systems: Feature Length
+        Selection and Transmission Scheduling,'' \emph{IEEE Journal on Selected Areas in
+        Information Theory}, vol.~4, pp.~524--538, 2023.
+  \item \mentee{K. Yan}, \me, and Y. Sun,
+        ``A Transfer Learning-Based Deep Convolutional Neural Network for Detection of
+        Fusarium Wilt in Banana Crops,'' \emph{AgriEngineering}, vol.~5, no.~4,
+        pp.~2381--2394, 2023.
+\end{publist}
+
+\cvsubsection{Conference Papers}
+\begin{publist}{C}{12}
+  \item \mentee{Y. Zou}, \me, V. Tripathi, and C. Brinton,
+        ``Communication-Efficient Personalized Adaptation via Federated-Local Model Merging,''
+        in \emph{Proc.\ NeurIPS}, 2026. \note{Acceptance Rate: 25.7\%}
+  \item \mentee{Y. Zou}, \me, V. Tripathi, and C. Brinton,
+        ``Distributed Online Convex Optimization with Interference Constraints: The Role of
+        Gradient Freshness,'' submitted, 2026.
+  \item \me, V. Tripathi, C. Brinton, and M. Chiang,
+        ``Online Learning of Whittle Indices for Restless Bandits with Non-Stationary
+        Transition Kernels,'' submitted, 2026.
+  \item \mentee{A. Piaseczny}, \me, S. Wang, and C. Brinton,
+        ``RCCDA: Adaptive Model Updates in the Presence of Concept Drift under a Constrained
+        Resource Budget,'' in \emph{Proc.\ NeurIPS}, 2025. \note{Acceptance Rate: 24.52\%}
+  \item \me, V. Tripathi, C. Brinton, and M. Chiang,
+        ``AoI-based Scheduling of Correlated Sources for Timely Inference,''
+        in \emph{Proc.\ IEEE ICC}, 2025.
+  \item \me, A. Piaseczny, Y. Sun, and C. Brinton,
+        ``Computation and Communication Co-scheduling for Timely Multi-Task Inference at the
+        Wireless Edge,'' in \emph{Proc.\ IEEE INFOCOM}, 2025. \note{Acceptance Rate: 18.6\%}
+  \item \mentee{C. Ari}, \me, E. Uysal, and Y. Sun,
+        ``Goal-Oriented Communications for Remote Inference with Two-Way Delay,''
+        in \emph{Proc.\ IEEE ISIT}, 2024.
+  \item \me\ and Y. Sun, ``On the Monotonicity of Information Aging,''
+        in \emph{Proc.\ IEEE INFOCOM ASoI Workshop}, 2024.
+  \item T. Z. Ornee, \me, C. Kam, and Y. Sun,
+        ``Context-aware Status Updating: Wireless Scheduling for Maximizing Situational
+        Awareness in Safety-critical Systems,'' in \emph{Proc.\ IEEE MILCOM}, 2023.
+  \item \me\ and Y. Sun, ``How Does Data Freshness Affect Real-time Supervised Learning?''
+        in \emph{Proc.\ ACM MobiHoc}, 2022. \note{Acceptance Rate: 19.8\%}
+  \item \me, H. Qin, L. Yang, F. Yan, and Y. Sun,
+        ``The Age of Correlated Features in Supervised Learning based Forecasting,''
+        in \emph{Proc.\ IEEE INFOCOM AoI Workshop}, 2021.
+  \item \me, T. Z. Ornee, and M. F. Hossain,
+        ``QoS Aware User Association in Massive MIMO Enabled HetNets for DTU and NDTU
+        Traffic,'' in \emph{Proc.\ IEEE ICAEE}, 2017.
+\end{publist}
+
+% ---------------------------------------------------------------
+\cvsection{Presentations}
+\textit{Timely Communications and Learning over Resource-Constrained System}
+\begin{cvbullets}
+  \item UCCS Computer Science Department \hfill Nov, 2026
+\end{cvbullets}
+\textit{Computation and Communication Co-scheduling for Timely Multi-Task Inference at the
+Wireless Edge}
+\begin{cvbullets}
+  \item IEEE INFOCOM, London, UK \hfill May 2025
+\end{cvbullets}
+\vspace{6pt}\needspace{3\baselineskip}
+\textit{Timely Inference over Networks}
+\begin{cvbullets}
+  \item Ph.D. Dissertation Defense, Auburn University \hfill Apr. 2024
+  \item Invited Talk, Purdue University \hfill Mar. 2024
+  \item Invited Talk, Northwestern University \hfill Mar. 2024
+  \item Invited Poster Presentation, ITA Workshop \hfill Feb. 2024
+  \item Invited Talk, Southeast Control Conference \hfill Feb. 2024
+  \item Talk, Department of ECE, Auburn University \hfill Feb. 2024
+\end{cvbullets}
+\vspace{6pt}\needspace{3\baselineskip}
+\textit{Learning and Communications Co-design for Remote Inference: Feature Length Selection
+and Transmission Scheduling}
+\begin{cvbullets}
+  \item Invited Talk, University of Maryland, College Park, MD \hfill Oct. 2023
+  \item Graduate Engineering Research Showcase, Auburn University \hfill Oct. 2023
+\end{cvbullets}
+\vspace{6pt}\needspace{3\baselineskip}
+\textit{Communications of Timely Information for Real-time Machine Learning and Networked
+Intelligence}
+\begin{cvbullets}
+  \item North American School of Information Theory, Philadelphia, PA \hfill June 2023
+\end{cvbullets}
+\vspace{6pt}\needspace{3\baselineskip}
+\textit{How Does Data Freshness Affect Real-time Supervised Learning?}
+\begin{cvbullets}
+  \item Auburn University Research Symposium (Poster Presentation) \hfill Mar. 2023
+  \item Information Theory and Applications Workshop, San Diego, CA \hfill Feb. 2023
+  \item ACM MobiHoc, Seoul, South Korea \hfill Oct. 2022
+  \item College of Engineering Research Showcase at the U.S. Space and Rocket Center,
+        Huntsville, AL (Poster Presentation) \hfill Aug. 2022
+\end{cvbullets}
+\vspace{6pt}\needspace{3\baselineskip}
+\textit{The Age of Correlated Features in Supervised Learning based Forecasting}
+\begin{cvbullets}
+  \item IEEE INFOCOM AoI Workshop, Vancouver, BC, Canada (virtual) \hfill May 2021
+\end{cvbullets}
+
+% ---------------------------------------------------------------
+\cvsection{Professional\\Activities and\\Services}
+\cvsubsection{Technical Program Committee Member}
+\begin{cvlist}
+  \item IEEE INFOCOM, 2027
+  \item ACM MobiHoc, 2026
+  \item IEEE MILCOM Workshops, 2026
+  \item IEEE WCNC, 2021, 2022, 2026
+\end{cvlist}
+\cvsubsection{Conference Session Chair}
+\begin{cvlist}
+  \item IEEE INFOCOM ASoI Workshop, 2025
+  \item IEEE INFOCOM DTWin Workshop, 2025
+\end{cvlist}
+\cvsubsection{Reviewer for Journals}
+\begin{cvlist}
+  \item IEEE Transactions on Networking, 2024, 2025, 2026
+  \item IEEE Transactions on Information Forensics \& Security, 2025
+  \item IEEE Transactions on Signal Processing, 2025
+  \item IEEE Transactions on Communications, 2024, 2025
+  \item IEEE Transactions on Mobile Computing, 2024, 2025
+  \item IEEE Transactions on Network Science and Engineering, 2024
+  \item IEEE Transactions on Green Communications and Networking, 2024
+  \item IEEE Transactions on Wireless Communications, 2022, 2024
+  \item Journal of Communications and Networks, 2020, 2023
+  \item IEEE Journal on Selected Areas in Information Theory, 2023
+  \item IEEE Open Journal of the Communications Society, 2023
+  \item IEEE Journal on Selected Areas in Communications, 2020
+\end{cvlist}
+\cvsubsection{Reviewer for Conferences}
+\begin{cvlist}
+  \item IEEE ITW, 2024
+  \item IEEE WiOpt, 2024
+  \item ACM MobiHoc ASoI Workshop, 2024
+  \item IEEE ISIT, 2022
+  \item IEEE INFOCOM, 2020, 2022
+  \item IEEE WCNC, 2021, 2022
+  \item IEEE INFOCOM AoI Workshop, 2019, 2020
+\end{cvlist}
+\cvsubsection{Other Services}
+\cvitem{Maintainer of an online paper repository on Age of Information}{Aug. 2018 -- May 2024}
+\cvitem{Organizing Secretary, Bangladesh Student Organization, Auburn University}{2022 -- 2023}
+\cvitem{Volunteer on E-Day, Auburn University, Auburn, AL}{Feb. 2020}
+
+\end{document}
